@@ -12,7 +12,7 @@ def init_logger(name, level=logging.INFO):
     sh.setLevel(level)
 
     # フォーマッタを定義する（第一引数はメッセージのフォーマット文字列、第二引数は日付時刻のフォーマット文字列）
-    fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(filename)s/%(funcName)s - %(message)s", "%m-%d%H:%M:%S")
+    fmt = logging.Formatter("%(asctime)s [%(name)s] [%(levelname)s] %(filename)s/%(funcName)s - %(message)s", "%m-%d%H:%M:%S")
 
     # フォーマッタをハンドラに紐づける
     sh.setFormatter(fmt)

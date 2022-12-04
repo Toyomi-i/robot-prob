@@ -60,4 +60,10 @@ class World:
 
         for obj in self.objects:
             # obj: IdealRobot
+            # 描画先にすることで，初期状態を描画できる
             obj.draw(ax, elems)
+
+            # objにone_stepメソッドがあればobjのone_stepメソッドを実行
+            if hasattr(obj, "one_step"):
+                # Δt: 離散時間1ステップの間隔(今回は1.0s)
+                obj.one_step(1.0)
